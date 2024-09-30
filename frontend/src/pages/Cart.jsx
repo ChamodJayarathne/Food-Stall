@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 // import { useNavigate } from "react-router-dom";
 const Cart = () => {
-  const { all_products, cartItems, removeFromCart, getTotalCartAmount } =
+  const { all_products, cartItems, removeFromCart, getTotalCartAmount, url } =
     useContext(ShopContext);
   const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ const Cart = () => {
                   >
                     <td className="p-1">
                       <img
-                        src={product.image}
+                        src={url + "/images/" + product.image}
                         alt="cartProductImg"
                         height={43}
                         width={43}

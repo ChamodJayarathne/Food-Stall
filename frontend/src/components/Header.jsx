@@ -16,11 +16,10 @@ import { ShopContext } from "../context/ShopContext";
 
 const Header = ({ setShowLogin }) => {
   const [menuOpened, setMenuOpened] = useState(false);
-  const [token, setToken] = useState(false);
   const [header, setHeader] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const { getTotalCartItems } = useContext(ShopContext);
+  const { getTotalCartItems, token, setToken } = useContext(ShopContext);
 
   const toggleMenu = () => {
     setMenuOpened(!menuOpened);
@@ -117,7 +116,7 @@ const Header = ({ setShowLogin }) => {
                   </li>
                   <hr className="my-2" />
                   <li
-                    onClick={() => navigate("/myorders")}
+                    onClick={logout}
                     className="flexCenter gap-x-2 cursor-pointer"
                   >
                     <TbLogout className="text-[19px]" />

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 
 const Item = ({ product }) => {
-  const { cartItems, addToCart, removeFromCart } = useContext(ShopContext);
+  const { cartItems, addToCart, removeFromCart, url } = useContext(ShopContext);
 
   return (
     <div className="ring-1 ring-slate-900/5 rounded-xl">
@@ -15,7 +15,7 @@ const Item = ({ product }) => {
         className="flexCenter p-4 ring-1 ring-slate-200/20 bg-white rounded-xl"
       >
         <img
-          src={product.image}
+          src={url+"/images/"+product.image}
           alt="productImg"
           height={222}
           width={222}
