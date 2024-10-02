@@ -69,7 +69,7 @@ const MyOrders = () => {
                   </p>
                 </td>
                 <td className="p-1">
-                  <button className="btn-white rounded-sm">Track</button>
+                  <button onClick={fetchOrders} className="btn-white rounded-sm">Track</button>
                 </td>
               </tr>
             ))}
